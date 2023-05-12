@@ -11,6 +11,7 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/,
+        exclude: path.resolve(__dirname, "node_modules"),
         use: [
           {
             loader: "babel-loader",
@@ -29,10 +30,6 @@ module.exports = {
           { loader: "css-loader" },
           { loader: "sass-loader" },
         ],
-      },
-      {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
